@@ -1,12 +1,3 @@
-# Demo Knowledge point #
-
-## AndroidManifest.xml ##
-    android:excludeFromRecents = "true" 不在最新使用列表中显示
-    android:taskAffinity="" 指定任务栈 ,包名
-    android:allowTaskReparenting = "true"用来标记Activity能否从启动的Task移动到taskAffinity指定的Task ,true 表示可以转移Task
-
- 
- 
  
 ## JavaScript && APP ##
 
