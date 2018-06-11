@@ -1,15 +1,23 @@
  
-## JavaScript && APP ##
+## JS 与 Android原生APP交互 ##
 
-### Custom URI scheme ###
+
+### 1. Custom URI scheme ###
+
+Custom URI语法
+
     scheme://host/path?key=value
-    js调用 ： 
+
+ JS调用
+
     hoorang://jsopenapp?param=Custom URI scheme
-    
-    java解析：
+   
+java解析
+
     Uri uri = Uri.parse(url)
     
-    防攻击，安全启动方法：
+JS启动APP防攻击，JAVA安全启动方法
+
     // convert intent scheme URL to intent object  
     Intent intent = Intent.parseUri(uri);  
     // forbid launching activities without BROWSABLE category  
@@ -22,14 +30,22 @@
     context.startActivityIfNeeded(intent, -1);  
     
     
-### Intent-based URI ###
+### 2. Intent-based URI ###
+Intent-based URI语法
+
     intent://host#Intent;parameters;end
-    
-    js调用：
+
+JS调用
+
     hoorang://jsopenapp#Intent;action=android.intent.action.VIEW;category=android.intent.category.DEFAULT;category=android.intent.category.BROWSABLE;S.param=Intent-based URI;end
     
-    参数获取：
+JAVA参数获取
+
     Intent dataStringIntent = Intent.parseUri(intent.getDataString() , 0);
     if(dataStringIntent.hasExtra("param")){
            message.append("param#" + dataStringIntent.getStringExtra("param"));
     }
+
+JS调用系统APP示例
+
+	window.location = 'intent:smsto:10000#Intent;action=android.intent.action.SENDTO;end';
