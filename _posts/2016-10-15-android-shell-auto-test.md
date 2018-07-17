@@ -16,8 +16,8 @@
 
 		getevent -p 
 
-	![avatar](android-shell-auto-test-getevent.png)
-	
+	<img class="shadow"  src="../img/in-post/android-shell-auto-test-getevent.png" />
+
 	rateW = 540(手机屏幕的宽) / 539(event里0035的max) ≈ 1
 	
 	rateH = 960(手机屏幕的高) / 959(event里0036的max) ≈ 1
@@ -26,7 +26,7 @@
 
 		getevent device name | grep -e "0035" -e "0036"
 
-	![avatar](android-shell-auto-test-getevent-input.png)
+	<img class="shadow"  src="../img/in-post/android-shell-auto-test-getevent-input.png" />
 
 	把0035和0036后面的位置数据从16进制转化为10进制 
 		
